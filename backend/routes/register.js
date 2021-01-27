@@ -29,9 +29,3 @@ router.post('/', async (req, res) => {
 })
 
 module.exports = router;
-
-
-// sprawdzac czy sa bledy jesli tak err 500;
-// jesli nie ma bledu to jest null;
-// zwraca pusty array nawet jesli nie ma usera;
-// jesli jest pusty array to zarejestrowac;

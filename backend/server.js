@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+require('dotenv').config()
 
 const app = express();
 
@@ -9,8 +10,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use('/register', require('./routes/register'));
-app.use('/recipes', require('./routes/recipes'));
 app.use('/login', require('./routes/login'));
+app.use('/postrecipes', require('./routes/PostRecipes'));
+app.use('/getrecipes', require('./routes/GetRecipes'));
 
 const PORT = 5000;
 
