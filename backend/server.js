@@ -13,6 +13,7 @@ app.use('/register', require('./routes/register'));
 app.use('/login', require('./routes/login'));
 app.use('/postrecipes', require('./routes/PostRecipes'));
 app.use('/getrecipes', require('./routes/GetRecipes'));
+app.use('/deleterecipes', require('./routes/DeleteRecipes'));
 
 const PORT = 5000;
 

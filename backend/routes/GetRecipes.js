@@ -7,19 +7,15 @@ router.get('/', authorizeToken, (req, res) => {
 	const sql = 'SELECT * FROM recipes WHERE user_id = ?'
 	const { id } = req.user;
 	
-	db.all(sql, [id], (err, rows) => {
-		if (err) {
-			console.log(err);
+	db.all(sql, [id], async (err, rows) => {
+		if (err) res.status(400).json({ "message": err.message })
+		if (rows) {
+			await res.status(200).json({ "recipes": rows})
+		} else {
+			res.status(404).json({ "message": "no recipes for this user" })
 		}
-		rows.forEach(row => {
-			console.log(req.user)
-			if (row.user_id === req.user.id) {
-				console.log(row)
-			} else {
-				console.log('no recipes for this user')
-			}
-		})
-	})
+		}
+	)
 })
 
 module.exports = router;

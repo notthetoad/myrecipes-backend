@@ -29,4 +29,6 @@ router.post('/', async (req, res) => {
 	}
 })
 
+// If login doesnt exist in db server crashes
+
 module.exports = router;

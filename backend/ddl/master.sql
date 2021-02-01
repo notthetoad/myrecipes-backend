@@ -11,7 +11,7 @@ CREATE TABLE recipes (
 	title TEXT,
 	author TEXT,
 	ingredients TEXT,
-	portion_size TEXT,
+	portion_size INTEGER,
 	steps TEXT,
 	user_id INTEGER,
 	FOREIGN KEY (user_id) REFERENCES users (user_id)
