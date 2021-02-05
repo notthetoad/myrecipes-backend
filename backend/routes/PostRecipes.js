@@ -12,10 +12,10 @@ router.post('/', authorizeToken, (req, res) => {
 
 	db.run(sqlInsert, params, err => {
 		if (err) {
-			console.log(err.message)
+			res.status(400).json({ "message": "Could not add recipe" })
+		} else {
+			res.status(200).json({ title: title, author: author, ingredients: ingredients, portionSize: portionSize, steps: steps, user_id: id, "message": "Recipe Added" })
 		}
-		// res.status(200).json({"message": "Recipe succesfully added" })
-		res.status(200).json({ title: title, author: author, ingredients: ingredients, portionSize: portionSize, steps: steps, user_id: id })
 	}) 	
 });
 
