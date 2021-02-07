@@ -16,14 +16,6 @@ router.get('/', authorizeToken, (req, res) => {
 		}
 		}
 	)
-
-	// db.each(sql, [id], (err, row) => {
-	// 	if (err) console.log(err.message);
-	// 	if (row) {
-	// 		res.status(200).json({ "recipes": row })
-	// 	}
-	// })
-
 })
 
 module.exports = router;
