@@ -14,7 +14,6 @@ app.use('/login', require('./routes/login'));
 app.use('/postrecipes', require('./routes/PostRecipes'));
 app.use('/getrecipes', require('./routes/GetRecipes'));
 app.use('/deleterecipes', require('./routes/DeleteRecipes'));
-app.use('/refreshtoken', require('./routes/RefreshToken'));
 
 const PORT = process.env.PORT;
 
