@@ -19,7 +19,7 @@ router.post('/', async (req, res) => {
 			else if (row) {
 				if (await bcrypt.compare(password, row.password)) {
 					const user = {id: row.user_id, login: row.login}
-					const accessToken = jwt.sign(user, process.env.JWT_TOKEN_SECRET, { expiresIn: '10m' })
+					const accessToken = jwt.sign(user, 'process.env.JWT_TOKEN_SECRET', { expiresIn: '10m' })
 					res.status(200).json({ "message": "success", "jwt": accessToken })
 				} else {
 					res.status(401).json({ "message": "Invalid password" })
